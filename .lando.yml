@@ -1,0 +1,16 @@
+name: hamburgers
+services:
+  appserver:
+    type: apache:2.4
+    webroot: dist
+    ssl: false
+  node:
+    type: node:14
+tooling:
+  npm:
+    service: node
+  node:
+    service: node
+proxy:
+  appserver:
+    - hamburgers.lndo.site
